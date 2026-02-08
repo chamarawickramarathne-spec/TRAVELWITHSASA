@@ -135,13 +135,13 @@
         class="q-mt-xl animate-fade-in section-reveal"
       >
         <div class="text-center q-mb-lg">
-          <div class="text-overline text-primary font-weight-bold">Along Your Route</div>
+          <div class="text-overline text-primary font-weight-bold">Route Insights</div>
           <h2 class="text-h4 font-weight-bold text-uppercase">
             Exclusive <span class="text-secondary">Stopovers</span>
           </h2>
           <div class="section-underline mx-auto"></div>
           <p class="text-subtitle1 text-grey-7 q-mt-sm">
-            Hand-picked locations that you shouldn't miss on this journey.
+            Based on your path, we recommend these top-rated local spots from Google Maps data.
           </p>
         </div>
 
@@ -149,14 +149,14 @@
           <div v-for="place in recommendedPlaces" :key="place.name" class="col-12">
             <q-card flat class="place-detail-card row no-wrap overflow-hidden bordered" bordered>
               <div class="col-12 col-md-5">
-                <q-img :src="place.image" class="full-height">
+                <q-img :src="place.image" class="full-height" :ratio="1">
                   <div class="absolute-top-left q-ma-md">
                     <q-chip
                       color="secondary"
                       text-color="white"
                       icon="star"
                       class="text-bold"
-                      label="Top Rated"
+                      label="Top Recommendation"
                     />
                   </div>
                 </q-img>
@@ -167,7 +167,12 @@
                     <div class="text-h5 font-weight-bold text-primary">{{ place.name }}</div>
                     <div class="row items-center q-gutter-xs">
                       <q-rating v-model="place.rating" size="20px" color="orange" readonly />
-                      <span class="text-caption text-grey-7">({{ place.reviews }})</span>
+                      <span class="text-caption text-grey-7 font-weight-bold text-h6 q-ml-sm">{{
+                        place.rating
+                      }}</span>
+                      <span class="text-caption text-grey-6"
+                        >({{ place.reviews }} Google Reviews)</span
+                      >
                     </div>
                   </div>
 
@@ -180,27 +185,38 @@
                       dense
                       size="sm"
                       :label="tag"
+                      class="text-weight-bold"
                     />
                   </div>
 
-                  <p class="text-body1 text-grey-8">{{ place.fullDescription }}</p>
+                  <p class="text-body1 text-grey-8 line-height-1-6">{{ place.fullDescription }}</p>
 
                   <div class="row q-col-gutter-md q-mt-md">
                     <div class="col-6">
-                      <div class="row items-center q-gutter-sm">
-                        <q-icon name="schedule" color="primary" size="20px" />
+                      <div class="row items-center q-gutter-sm bg-grey-1 q-pa-sm rounded-borders">
+                        <q-icon name="schedule" color="primary" size="24px" />
                         <div>
-                          <div class="text-caption text-grey-6">Best Time</div>
-                          <div class="text-subtitle2">{{ place.bestTime }}</div>
+                          <div
+                            class="text-caption text-grey-6 text-uppercase font-weight-bold"
+                            style="font-size: 0.65rem"
+                          >
+                            Best Timing
+                          </div>
+                          <div class="text-subtitle2 text-primary">{{ place.bestTime }}</div>
                         </div>
                       </div>
                     </div>
                     <div class="col-6">
-                      <div class="row items-center q-gutter-sm">
-                        <q-icon name="hourglass_empty" color="primary" size="20px" />
+                      <div class="row items-center q-gutter-sm bg-grey-1 q-pa-sm rounded-borders">
+                        <q-icon name="hourglass_empty" color="primary" size="24px" />
                         <div>
-                          <div class="text-caption text-grey-6">Duration</div>
-                          <div class="text-subtitle2">{{ place.duration }}</div>
+                          <div
+                            class="text-caption text-grey-6 text-uppercase font-weight-bold"
+                            style="font-size: 0.65rem"
+                          >
+                            Recommended Stay
+                          </div>
+                          <div class="text-subtitle2 text-primary">{{ place.duration }}</div>
                         </div>
                       </div>
                     </div>
@@ -210,25 +226,32 @@
                 <div class="q-mt-xl row items-center justify-between">
                   <div class="row items-center q-gutter-md">
                     <div v-for="act in place.activities" :key="act" class="text-center">
-                      <q-icon :name="getActivityIcon(act)" color="grey-6" size="24px" />
-                      <div class="text-tiny text-grey-6 capitalize">{{ act }}</div>
+                      <q-icon
+                        :name="getActivityIcon(act)"
+                        color="primary"
+                        size="28px"
+                        class="q-mb-xs"
+                        opacity="0.7"
+                      />
+                      <div class="text-tiny text-grey-7 capitalize font-weight-bold">{{ act }}</div>
                     </div>
                   </div>
                   <div class="q-gutter-sm">
                     <q-btn
                       flat
                       color="primary"
-                      label="Read More"
+                      label="Details on Maps"
+                      icon="open_in_new"
                       no-caps
                       class="font-weight-bold"
                     />
                     <q-btn
                       unelevated
                       color="secondary"
-                      label="Include in Plan"
+                      label="Add to My Journey"
                       icon="add"
                       no-caps
-                      class="q-px-lg rounded-pill"
+                      class="q-px-lg rounded-pill font-weight-bold shadow-2"
                     />
                   </div>
                 </div>
@@ -280,6 +303,8 @@ const getActivityIcon = (activity) => {
     surfing: 'waves',
     swimming: 'pool',
     meditation: 'self_improvement',
+    rafting: 'sailing',
+    aerial: 'flight_takeoff',
   }
   return icons[activity.toLowerCase()] || 'explore'
 }
@@ -287,134 +312,114 @@ const getActivityIcon = (activity) => {
 const mockData = {
   ella: [
     {
-      name: 'Ravana Falls',
-      description: 'Experience the thunderous beauty of the mists.',
+      name: 'Kitulgala White Water Rafting',
       fullDescription:
-        'One of the widest waterfalls in Sri Lanka, Ravana Falls is a must-visit. Legend says King Ravana hid Princess Sita in the caves behind this waterfall, which are reachable for adventurous hikers.',
+        'Located half-way to Ella, Kitulgala is the primary spot for adventure in Lanka. Famous for the filming of "The Bridge on the River Kwai", it offers world-class rafting on the Kelani River.',
       image:
-        'https://images.unsplash.com/photo-1588612140410-6c9f2852b75a?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.8,
-      reviews: '1.2k',
-      tags: ['Waterfall', 'Photography', 'Heritage'],
-      bestTime: 'Early Mornings',
-      duration: '45 mins',
-      activities: ['Photography', 'Sightseeing'],
+        'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=1200&auto=format&fit=crop',
+      rating: 4.5,
+      reviews: '2,800',
+      tags: ['Adventure', 'Rafting', 'River'],
+      bestTime: '10 AM - 3 PM',
+      duration: '3 Hours',
+      activities: ['Rafting', 'Photography'],
     },
     {
-      name: 'Little Adams Peak',
-      description: 'Golden hour views across the central highlands.',
+      name: 'St. Clairs Falls',
       fullDescription:
-        'An easy hike that rewards you with 360-degree views of the Ella Gap. It is named after the sacred Adams Peak due to its similar shape but much easier accessibility.',
-      image:
-        'https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.9,
-      reviews: '2.5k',
-      tags: ['Hiking', 'Nature', 'Easy'],
-      bestTime: 'Sunrise or Sunset',
-      duration: '1-2 Hours',
-      activities: ['Hiking', 'Photography'],
-    },
-    {
-      name: 'Nine Arch Bridge',
-      description: 'Iconic colonial engineering amidst lush tea.',
-      fullDescription:
-        'Hidden in a dense jungle, this majestic colonial-era railway bridge is built entirely out of stone and bricks without a single piece of steel. A masterpiece of local engineering.',
+        'Commonly known as the "Little Niagara of Sri Lanka", this is one of the widest waterfalls in the country. A breathtaking stopover surrounded by the emerald green St. Clairs Tea Estate.',
       image:
         'https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1200&auto=format&fit=crop',
       rating: 4.7,
-      reviews: '3.1k',
-      tags: ['History', 'Railways', 'Design'],
-      bestTime: 'Best for Train Timing',
-      duration: '1 Hour',
-      activities: ['History', 'Photography'],
+      reviews: '1,500',
+      tags: ['Waterfall', 'Tea Estate', 'Scenic'],
+      bestTime: 'Late Morning',
+      duration: '45 mins',
+      activities: ['Photography', 'Sightseeing'],
     },
   ],
   sigiriya: [
     {
-      name: 'Dambulla Cave Temple',
-      description: 'Ancient spiritual art in a rock cavern.',
+      name: 'Ethagala (Elephant Rock), Kurunegala',
       fullDescription:
-        'A UNESCO World Heritage site, this Cave Temple complex is the largest and best-preserved in Sri Lanka. It houses 153 Buddha statues and stunning ceiling frescoes.',
-      image:
-        'https://images.unsplash.com/photo-1620619767323-b95a89183081?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.6,
-      reviews: '1.8k',
-      tags: ['Spiritual', 'UNESCO', 'Art'],
-      bestTime: '8 AM - 10 AM',
-      duration: '1.5 Hours',
-      activities: ['Meditation', 'History'],
-    },
-    {
-      name: 'Pidurangala Rock',
-      description: 'The absolute best perspective of the Lion Rock.',
-      fullDescription:
-        'While thousands climb Sigiriya, the real view is from Pidurangala. This challenging climb offers the perfect panoramic view of the Fortress of Sigiriya against the horizon.',
+        'Dominating the Kurunegala skyline, this massive rock shaped like an elephant features a towering 88ft Buddha statue at the summit. Offers a panoramic 360 view of the lake and city.',
       image:
         'https://images.unsplash.com/photo-1588596389718-47291a10052c?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.9,
-      reviews: '950',
-      tags: ['Adventure', 'Viewpoint', 'Sunrise'],
-      bestTime: 'Sunrise (5:30 AM)',
-      duration: '2 Hours',
-      activities: ['Hiking', 'Photography'],
+      rating: 4.6,
+      reviews: '3,200',
+      tags: ['Viewpoint', 'Hiking', 'Historical'],
+      bestTime: 'Sunrise or Sunset',
+      duration: '1.5 Hours',
+      activities: ['Hiking', 'Sightseeing'],
     },
     {
-      name: 'Minneriya Safari',
-      description: 'The largest gathering of wild elephants at dusk.',
+      name: 'Dambulla Royal Cave Temple',
       fullDescription:
-        'Known for "The Gathering", Minneriya is where hundreds of wild elephants congregate around the tank. It is an unparalleled wildlife experience in Asia.',
+        'A UNESCO World Heritage site located just before Sigiriya. Five separate caves containing 153 Buddha statues and stunning frescoes dating back over 2,000 years.',
       image:
-        'https://images.unsplash.com/photo-1549405178-68e7f1e78457?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.8,
-      reviews: '1.4k',
-      tags: ['Wildlife', 'Animals', 'Jeep'],
-      bestTime: 'Late Afternoon',
-      duration: '3 Hours',
-      activities: ['Wildlife', 'Safari'],
+        'https://images.unsplash.com/photo-1620619767323-b95a89183081?q=80&w=1200&auto=format&fit=crop',
+      rating: 4.7,
+      reviews: '18,200',
+      tags: ['UNESCO', 'Historical', 'Buddhist'],
+      bestTime: 'Morning (Cooler)',
+      duration: '2 Hours',
+      activities: ['History', 'Meditation'],
     },
   ],
   galle: [
     {
-      name: 'Unawatuna Beach',
-      description: 'Sun-drenched golden sands and reef waves.',
+      name: 'Kosgoda Sea Turtle Hatchery',
       fullDescription:
-        'A world-famous beach shaped like a crescent. Its calm waters make it perfect for swimming and snorkeling, with a vibrant nightlife along the shore.',
+        'A vital conservation project on the coastal road. See several species of sea turtles from hatchlings to rescued adults, and learn about their journey to the ocean.',
       image:
-        'https://images.unsplash.com/photo-1586500036706-41963de24d8b?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.5,
-      reviews: '4k',
-      tags: ['Scuba', 'Beach', 'Leisure'],
-      bestTime: 'November - April',
-      duration: 'All Day',
-      activities: ['Swimming', 'Photography'],
+        'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=1200&auto=format&fit=crop',
+      rating: 4.4,
+      reviews: '4,800',
+      tags: ['Wildlife', 'Conservation', 'Nature'],
+      bestTime: 'Evening Release',
+      duration: '1 Hour',
+      activities: ['Wildlife', 'Photography'],
     },
     {
-      name: 'Koggala Lake',
-      description: 'Serene boat rides and traditional stilt fishing.',
+      name: 'Madu River Mangrove Safari',
       fullDescription:
-        'One of the largest lakes in the south, famous for its bird islands and cinnamon plantations. Here you can witness the traditional stilt fishermen of Lanka.',
+        'A prehistoric mangrove ecosystem in Balapitiya. Boat trips take you through tunnels of mangroves to islands for cinnamon peeling and fish therapy spas.',
       image:
         'https://images.unsplash.com/photo-1544218520-43510e15645e?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.3,
-      reviews: '600',
-      tags: ['Culture', 'Boating', 'Peaceful'],
-      bestTime: 'Late Morning',
+      rating: 4.5,
+      reviews: '6,500',
+      tags: ['Safari', 'Mangroves', 'River'],
+      bestTime: 'Mid Morning',
       duration: '2 Hours',
-      activities: ['Sightseeing', 'Photography'],
+      activities: ['Safari', 'Wildlife'],
+    },
+  ],
+  trincomalee: [
+    {
+      name: 'Habarana (Minneriya Park Entrance)',
+      fullDescription:
+        'The gateway to the wildlife of the east. Best spot to witness "The Gathering" of wild elephants. An essential stop before reaching the coastal shores of Trinco.',
+      image:
+        'https://images.unsplash.com/photo-1549405178-68e7f1e78457?q=80&w=1200&auto=format&fit=crop',
+      rating: 4.6,
+      reviews: '2,500',
+      tags: ['Wildlife', 'Safari', 'Elephant'],
+      bestTime: 'Mid Afternoon',
+      duration: '3.5 Hours',
+      activities: ['Safari', 'Wildlife'],
     },
     {
-      name: 'Hikkaduwa Reef',
-      description: 'Turquoise waters teeming with marine life.',
+      name: 'Aukana Buddha Statue',
       fullDescription:
-        'A sanctuary for turtles and colorful fish. Take a glass-bottom boat or go snorkeling to explore the shallow coral gardens clearly visible through the water.',
+        'Carved out of a single granite rock in the 5th century, this 40ft masterpiece of ancient art is one of the most pristine standing Buddhas in the world.',
       image:
-        'https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1200&auto=format&fit=crop',
-      rating: 4.4,
-      reviews: '2.1k',
-      tags: ['Marine', 'Snorkeling', 'Turtles'],
-      bestTime: 'Morning (High Visibility)',
-      duration: '2 Hours',
-      activities: ['Swimming', 'Wildlife'],
+        'https://images.unsplash.com/photo-162019767323-b95a89183081?q=80&w=1200&auto=format&fit=crop',
+      rating: 4.8,
+      reviews: '2,100',
+      tags: ['Ancient Ruins', 'Religious', 'Art'],
+      bestTime: 'Early Morning',
+      duration: '1 Hour',
+      activities: ['History', 'Sightseeing'],
     },
   ],
 }
@@ -425,6 +430,8 @@ function handleUpdateRoute() {
     setTimeout(() => {
       const dest = trip.value.destination.toLowerCase()
       let found = false
+      recommendedPlaces.value = []
+
       for (const key in mockData) {
         if (dest.includes(key)) {
           recommendedPlaces.value = mockData[key]
@@ -432,24 +439,39 @@ function handleUpdateRoute() {
           break
         }
       }
+
       if (!found) {
+        // More sophisticated generic stops for unknown destinations
         recommendedPlaces.value = [
           {
-            name: 'Local Village Tour',
-            description: 'Authentic encounters with local traditions.',
+            name: 'Local Spices Garden',
             fullDescription:
-              'Experience the heartbeat of rural Sri Lanka. Visit traditional homes, watch pottery being made, and enjoy a meal cooked over a wood fire by village locals.',
+              'Sri Lanka is the spice island of the world. Stop over to learn about Cinnamon, Cardamom and Cloves in their natural habitat.',
             image:
-              'https://images.unsplash.com/photo-1544218520-43510e15645e?q=80&w=1200&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1200&auto=format&fit=crop',
+            rating: 4.2,
+            reviews: '1,100',
+            tags: ['Spices', 'Herbal', 'Garden'],
+            bestTime: 'Daytime',
+            duration: '1 Hour',
+            activities: ['Sightseeing', 'History'],
+          },
+          {
+            name: 'Tea Lounge Stop',
+            fullDescription:
+              'Enjoy a fresh cup of Ceylon Tea while looking over the rolling hills. A perfect break for any long journey in the island.',
+            image:
+              'https://images.unsplash.com/photo-1544733310-720dae5f800b?q=80&w=1200&auto=format&fit=crop',
             rating: 4.7,
-            reviews: '300',
-            tags: ['Village', 'Authentic', 'Culture'],
-            bestTime: 'Morning',
-            duration: '3 Hours',
-            activities: ['History', 'Sightseeing'],
+            reviews: '850',
+            tags: ['Tea', 'Relax', 'Lounge'],
+            bestTime: 'Afternoon',
+            duration: '40 mins',
+            activities: ['Photography', 'Sightseeing'],
           },
         ]
       }
+
       showMap.value = true
       loading.value = false
 
@@ -483,36 +505,50 @@ function handleUpdateRoute() {
 }
 
 .map-container {
-  min-height: 500px;
+  min-height: 520px;
   background: #e5e3df;
+  border-radius: 24px;
 }
 
 .place-detail-card {
-  border-radius: 24px;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 28px;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   background: white;
+  min-height: 380px;
   &:hover {
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 960px) {
     flex-direction: column;
+    .col-md-5,
+    .col-md-7 {
+      width: 100%;
+      height: auto;
+    }
+    .q-img {
+      height: 250px;
+    }
   }
 }
 
+.line-height-1-6 {
+  line-height: 1.6;
+}
 .text-tiny {
-  font-size: 10px;
+  font-size: 11px;
 }
 .capitalize {
   text-transform: capitalize;
 }
 
 .section-underline {
-  width: 80px;
-  height: 4px;
+  width: 100px;
+  height: 5px;
   background: var(--q-primary);
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-top: 12px;
+  border-radius: 3px;
 }
 
 .rounded-pill {
@@ -531,7 +567,7 @@ function handleUpdateRoute() {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -542,5 +578,9 @@ function handleUpdateRoute() {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.shadow-2 {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
 }
 </style>

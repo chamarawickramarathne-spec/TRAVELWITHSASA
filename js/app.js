@@ -8,6 +8,7 @@ class TravelApp {
   constructor() {
     this.posts = []
     this.fuse = null
+    this.lang = localStorage.getItem('appLang') || 'en'
     this.init()
   }
 
@@ -19,15 +20,73 @@ class TravelApp {
       // Initialize Fuse.js for searching
       if (window.Fuse) {
         this.fuse = new Fuse(this.posts, {
-          keys: ['title', 'excerpt', 'tags', 'category', 'location'],
+          keys: [
+            'en.title',
+            'si.title',
+            'en.excerpt',
+            'si.excerpt',
+            'en.category',
+            'si.category',
+            'tags',
+          ],
           threshold: 0.3,
         })
       }
 
+      this.setupLangSwitcher()
+      this.updateLabels()
       this.route()
     } catch (error) {
       console.error('Initialisation failed:', error)
     }
+  }
+
+  setupLangSwitcher() {
+    const btn = document.getElementById('lang-toggle')
+    if (btn) {
+      btn.textContent = this.lang === 'en' ? 'SI' : 'EN'
+      btn.onclick = () => {
+        this.lang = this.lang === 'en' ? 'si' : 'en'
+        localStorage.setItem('appLang', this.lang)
+        window.location.reload()
+      }
+    }
+  }
+
+  updateLabels() {
+    // Simple label updates for non-dynamic parts
+    const labels = {
+      en: {
+        search: "Search destinations like 'Ella'...",
+        explore: 'Explore',
+        destinations: 'Destinations',
+        discover: 'DISCOVER',
+        tagline:
+          'Explore the pearl of the Orient through the eyes of locals. Authenticity guaranteed.',
+      },
+      si: {
+        search: 'පිවිසීමට බලාපොරොත්තු වන ස්ථානය සොයන්න...',
+        explore: 'සොයන්න',
+        destinations: 'ස්ථාන',
+        discover: 'අලුත් තැන්',
+        tagline: 'ශ්‍රී ලංකාවේ සුන්දරත්වය සැබෑ දේශීය අත්දැකීමක් ලෙස විඳින්න.',
+      },
+    }
+
+    const current = labels[this.lang]
+    const searchInput = document.getElementById('search-input')
+    if (searchInput) searchInput.placeholder = current.search
+
+    const exploreBtn = document.querySelector('button.bg-primary')
+    if (exploreBtn) exploreBtn.textContent = current.explore
+
+    const discoverLabel = document.querySelector('h2.text-white')
+    if (discoverLabel) {
+      discoverLabel.innerHTML = `${current.discover} <span class="text-secondary">${this.lang === 'si' ? 'විස්මිත ස්ථාන' : 'DESTINATIONS'}</span>`
+    }
+
+    const tagline = document.querySelector('p.text-gray-300')
+    if (tagline) tagline.textContent = current.tagline
   }
 
   route() {
@@ -50,7 +109,6 @@ class TravelApp {
   handleHome() {
     const postGrid = document.getElementById('post-grid')
     const searchInput = document.getElementById('search-input')
-    const searchResults = document.getElementById('search-results')
 
     if (postGrid) {
       this.renderPosts(this.posts, postGrid)
@@ -59,7 +117,7 @@ class TravelApp {
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         const query = e.target.value
-        if (query.length > 2) {
+        if (query.length > 1) {
           const results = this.fuse ? this.fuse.search(query).map((r) => r.item) : []
           this.renderPosts(results, postGrid)
         } else if (query.length === 0) {

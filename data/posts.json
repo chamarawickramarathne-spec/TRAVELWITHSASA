@@ -1,74 +1,122 @@
 [
   {
     "id": "sigiriya",
-    "title": "The Lion Rock: Sigiriya's Ancient Mystery",
-    "excerpt": "Climb the legendary stone citadel and discover the history of King Kashyapa's palace in the sky.",
-    "content": "Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. It is a site of historical and archaeological significance that is dominated by a massive column of rock around 180 metres high.\n\nAccording to the ancient Sri Lankan chronicle the Culavamsa, this area was a large forest, then after storms and landslides it became a hill and was selected by King Kashyapa for his new capital. He built his palace on top of this rock and decorated its sides with colourful frescoes. On a small plateau about halfway up the side of this rock he built a gateway in the form of an enormous lion. The name of this place is derived from this structure; Sīhāgiri, the Lion Rock.\n\nThe capital and the royal palace were abandoned after the king's death. It was used as a Buddhist monastery until the 14th century. Sigiriya today is a UNESCO listed World Heritage Site. It is one of the best preserved examples of ancient urban planning.",
+    "en": {
+      "title": "The Lion Rock: Sigiriya's Ancient Mystery",
+      "excerpt": "Climb the legendary stone citadel and discover the history of King Kashyapa's palace in the sky.",
+      "content": "Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. It is a site of historical and archaeological significance that is dominated by a massive column of rock around 180 metres high.\n\nAccording to the ancient Sri Lankan chronicle the Culavamsa, this area was a large forest, then after storms and landslides it became a hill and was selected by King Kashyapa for his new capital. He built his palace on top of this rock and decorated its sides with colourful frescoes. On a small plateau about halfway up the side of this rock he built a gateway in the form of an enormous lion. The name of this place is derived from this structure; Sīhāgiri, the Lion Rock.\n\nThe capital and the royal palace were abandoned after the king's death. It was used as a Buddhist monastery until the 14th century. Sigiriya today is a UNESCO listed World Heritage Site. It is one of the best preserved examples of ancient urban planning.",
+      "category": "History",
+      "location": "Matale District"
+    },
+    "si": {
+      "title": "සීගිරිය: අහස් මාළිගාවේ අබිරහස",
+      "excerpt": "කලාත්මක බිතුසිතුවම් සහ විස්මිත නිර්මාණ සහිත කාශ්‍යප රජුගේ අහස් මාළිගාවේ අසිරිය සොයා යන්න.",
+      "content": "රාවණා රජුගේ හෝ කාශ්‍යප රජුගේ රාජධානියක් ලෙස සැලකෙන සීගිරිය ශ්‍රී ලංකාවේ මධ්‍යම පළාතේ මාතලේ දිස්ත්‍රික්කයේ දඹුල්ල නගරය ආසන්නයේ පිහිටා ඇත. මීටර් 180 ක් පමණ උසැති විශාල පාෂාණ කුළුණක් මත මෙම විස්මිත නිර්මාණය ගොඩනගා ඇත.\n\nසිංහල ලේඛන වලට අනුව කාශ්‍යප රජු තම අගනුවර ලෙස මෙම ස්ථානය තෝරාගෙන ඇති අතර, ගලේ දෙපස වර්ණවත් බිතුසිතුවම් වලින් සරසා සිංහයෙකුගේ ස්වරූපයෙන් ප්‍රවේශ ද්වාරයක් නිර්මාණය කර ඇත. අද වන විට සීගිරිය යුනෙස්කෝ ලෝක උරුමයක් ලෙස නම් කර ඇති අතර එය ලොව හොඳම නාගරික සැලසුම්කරණයේ පැරණිම උදාහරණයකි.",
+      "category": "ඉතිහාසය",
+      "location": "මාතලේ දිස්ත්‍රික්කය"
+    },
     "image": "https://images.unsplash.com/photo-1588596389718-47291a10052c?q=80&w=2070&auto=format&fit=crop",
-    "category": "History",
     "tags": ["Ancient", "UNESCO", "Hiking", "Culture"],
-    "location_cluster": "Cultural Triangle",
-    "location": "Matale District",
-    "coordinates": { "lat": 7.957, "lng": 80.7603 }
+    "location_cluster": "Cultural Triangle"
   },
   {
     "id": "ella",
-    "title": "Ella: My Journey Through Sri Lanka's Misty Mountains",
-    "excerpt": "From the iconic Nine Arch Bridge to the sunrise at Little Adam's Peak, Ella is a feeling of serene isolation mixed with the thrill of discovery.",
-    "content": "Nestled in the heart of the Uva Province, Ella is more than just a destination; it’s a feeling. During my visit, I realized why travelers call it a backpacker's paradise. The air is perpetually cool, carrying the scent of fresh pine and drying tea leaves, a welcome change from the coastal heat.\n\nMy first stop was the legendary **Nine Arch Bridge**. Completed in 1921, this marvel of colonial-era engineering was built entirely of stone and brick without a single piece of steel. Standing there as the blue train winds its way across the arches is a surreal experience that feels like stepping back into Old Ceylon.\n\nFor those who love a good view, **Little Adam’s Peak (Punchi Sri Pada)** is a must. It's an easy yet rewarding hike that offers panoramic 360-degree views of the Ella Gap. If you're feeling more adventurous, **Ella Rock** presents a tougher challenge but rewards you with a cliff-edge view that overlooks the vast valleys below.\n\nDon't forget the myths and legends! **Ravana Falls and Cave** are steeped in the Ramayana epic. These falls are among the widest in the country and are said to be the hiding place of Princess Sita. \n\n**Traveler Tip:** If you're taking the train from Kandy, try to sit on the right side for the most breathtaking views of the tea estates. To catch the Nine Arch Bridge without the crowds, get there before 8:00 AM!",
+    "en": {
+      "title": "Ella: My Journey Through Sri Lanka's Misty Mountains",
+      "excerpt": "From the iconic Nine Arch Bridge to the sunrise at Little Adam's Peak, Ella is a feeling of serene isolation mixed with the thrill of discovery.",
+      "content": "Nestled in the heart of the Uva Province, Ella is more than just a destination; it’s a feeling. During my visit, I realized why travelers call it a backpacker's paradise. The air is perpetually cool, carrying the scent of fresh pine and drying tea leaves, a welcome change from the coastal heat.\n\nMy first stop was the legendary **Nine Arch Bridge**. Completed in 1921, this marvel of colonial-era engineering was built entirely of stone and brick without a single piece of steel. Standing there as the blue train winds its way across the arches is a surreal experience that feels like stepping back into Old Ceylon.\n\nFor those who love a good view, **Little Adam’s Peak (Punchi Sri Pada)** is a must. It's an easy yet rewarding hike that offers panoramic 360-degree views of the Ella Gap. If you're feeling more adventurous, **Ella Rock** presents a tougher challenge but rewards you with a cliff-edge view that overlooks the vast valleys below.\n\nDon't forget the myths and legends! **Ravana Falls and Cave** are steeped in the Ramayana epic. These falls are among the widest in the country and are said to be the hiding place of Princess Sita.\n\n**Traveler Tip:** If you're taking the train from Kandy, try to sit on the right side for the most breathtaking views of the tea estates.",
+      "category": "Travel Log",
+      "location": "Badulla District"
+    },
+    "si": {
+      "title": "ඇල්ල: මීදුමෙන් වැසුණු කඳුකරයේ මගේ චාරිකාව",
+      "excerpt": "ආරුක්කු නවයේ පාලමේ සිට පුංචි ශ්‍රී පාදය දක්වා ඇල්ලේ සුන්දරත්වය සහ විස්මිත අත්දැකීම් සමූහය මෙතැනින්.",
+      "content": "ඌව පළාතේ හදවත බඳු ඇල්ල යනු හුදෙක් සංචාරක ස්ථානයක් පමණක් නොව, එය සැබෑ හැඟීමකි. ඇල්ලට ආවේණික වූ සිසිල් දේශගුණය සහ තේ වතුවලින් හමන නැවුම් සුවඳ ඕනෑම අයෙකුගේ මනස නිදහස් කරයි.\n\nමගේ චාරිකාවේ පළමු නැවතුම වූයේ ලෝක ප්‍රකට **ආරුක්කු නවයේ පාලමයි**. 1921 දී කිසිදු යකඩයක් භාවිතා නොකර ගල් සහ ගඩොල් වලින් පමණක් නිමවා ඇති මෙම පාලම විස්මිත ඉංජිනේරු නිර්මාණයකි. නිල් පැහැති දුම්රිය මෙම පාලම මතින් යන දසුන හරියට පරණ ලංකාවට ගියා වැනි හැඟීමක් ලබා දෙයි.\n\nකඳු නැගීමට කැමති අයට **පුංචි ශ්‍රී පාදය** ඉතා සුන්දර අත්දැකීමකි. එහි මුදුනට ගිය විට ඇල්ල කපොල්ලේ අතිරමණීය දසුනක් දැකගත හැකිය. මීට අමතරව **රාවණා ඇල්ල** සහ **රාවණා ගුහාව** රාම-රාවණා පුරාවෘත්තයට සම්බන්ධ ඉතා වැදගත් ස්ථාන දෙකකි.\n\n**සංචාරක උපදෙස:** මහනුවර සිට දුම්රියෙන් එනවා නම් දකුණු පැත්තේ අසුනක් ගන්න, ඒ පැත්තෙන් තමයි ලස්සනම දසුන් පෙනෙන්නේ.",
+      "category": "සංචාරක සටහන්",
+      "location": "බදුල්ල දිස්ත්‍රික්කය"
+    },
     "image": "https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=2070&auto=format&fit=crop",
-    "category": "Travel Log",
     "tags": ["Backpacking", "Mountains", "Nine Arch", "Adventure"],
-    "location_cluster": "Hill Country",
-    "location": "Badulla District",
-    "coordinates": { "lat": 6.8667, "lng": 81.0466 }
+    "location_cluster": "Hill Country"
   },
   {
     "id": "galle",
-    "title": "Galle Fort: Where History Meets the Ocean",
-    "excerpt": "Walk through the cobblestone streets of the Dutch Fort and experience a unique blend of architecture.",
-    "content": "Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 432 years maintains a polished appearance, due to extensive reconstruction work done by the Archaeological Department of Sri Lanka.\n\nThe fort has a colourful history, and today has a multi-ethnic and multi-religious population. The heritage value of the fort has been recognized by the UNESCO and the site has been inscribed as a cultural heritage UNESCO World Heritage Site under Site IV, for its unique exposition of 'an urban ensemble which illustrates the interaction of European architecture and South Asian traditions from the 16th to the 19th centuries.'",
+    "en": {
+      "title": "Galle Fort: Where History Meets the Ocean",
+      "excerpt": "Walk through the cobblestone streets of the Dutch Fort and experience a unique blend of architecture.",
+      "content": "Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 432 years maintains a polished appearance. Today has a multi-ethnic and multi-religious population. It is a UNESCO World Heritage Site recognized for its unique European architecture and South Asian traditions.",
+      "category": "History",
+      "location": "Galle"
+    },
+    "si": {
+      "title": "ගාල්ල කොටුව: ඉතිහාසය සහ මුහුද මුණගැසෙන තැන",
+      "excerpt": "ලන්දේසි කොටුවේ ගල් අතුරා ඇති වීදි දිගේ ඇවිද යමින් ඉපැරණි ශ්‍රී ලංකාවේ අසිරිය විඳින්න.",
+      "content": "ගාල්ල කොටුව 1588 දී පෘතුගීසීන් විසින් මුලින්ම ඉදිකරන ලද අතර පසුව 17 වන සියවසේදී ලන්දේසීන් විසින් එය තවදුරටත් ශක්තිමත් කරන ලදී. වසර 400 කට වඩා පැරණි වුවද වර්තමානයේද ඉතා හොඳින් ආරක්ෂා වී පවතින මෙම කොටුව යුනෙස්කෝ ලෝක උරුමයක් ලෙස නම් කර ඇත. යුරෝපීය නිර්මාණ ශිල්පය සහ දකුණු ආසියානු සම්ප්‍රදායන්ගේ අපූරු එකතුවක් මෙහිදී දැකගත හැකිය.",
+      "category": "ඉතිහාසය",
+      "location": "ගාල්ල"
+    },
     "image": "https://images.unsplash.com/photo-1586500036706-41963de24d8b?q=80&w=1974&auto=format&fit=crop",
-    "category": "History",
     "tags": ["Colonial", "Beach", "UNESCO", "Architecture"],
-    "location_cluster": "South Coast",
-    "location": "Galle",
-    "coordinates": { "lat": 6.0329, "lng": 80.2168 }
+    "location_cluster": "South Coast"
   },
   {
     "id": "yala",
-    "title": "Wildlife Safari: In Search of the Leopard",
-    "excerpt": "Explore Yala National Park, home to one of the highest leopard densities in the world.",
-    "content": "Yala National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean, in the Southeast region of the country. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as Ruhuna National Park (block 1) and Kumana National Park or 'Yala East' for the adjoining area.\n\nIt is situated in the dry semi-arid climatic region and rain is received mainly during the northeast monsoon. Yala hosts a variety of ecosystems ranging from moist monsoon forests to freshwater and marine wetlands. It is one of the 70 Important Bird Areas (IBAs) in Sri Lanka. Yala harbours 215 bird species including six endemic species of Sri Lanka. The number of mammals that has been recorded from the park is 44, and it has one of the highest leopard densities in the world.",
+    "en": {
+      "title": "Wildlife Safari: In Search of the Leopard",
+      "excerpt": "Explore Yala National Park, home to one of the highest leopard densities in the world.",
+      "content": "Yala National Park is the most visited and second largest national park in Sri Lanka. It borders the Indian Ocean and consists of five blocks. It hosts a variety of ecosystems ranging from moist monsoon forests to freshwater and marine wetlands. Yala is world-renowned for its high density of leopards, making it the best place to spot these majestic big cats in the wild. You can also see elephants, crocodiles, and hundreds of bird species.",
+      "category": "Wildlife",
+      "location": "Tissamaharama"
+    },
+    "si": {
+      "title": "වනජීවී සෆාරි: කොටියාගේ අඩවිය සොයා",
+      "excerpt": "ලොව වැඩිම කොටින් සාන්ද්‍රණයක් සහිත යාල ජාතික වනෝද්‍යානයේ විස්මිත වනජීවී අත්දැකීම ලබාගන්න.",
+      "content": "යාල ජාතික වනෝද්‍යානය ශ්‍රී ලංකාවේ වැඩිපුරම සංචාරකයින් පැමිණෙන වනෝද්‍යානයයි. ඉන්දියන් සාගරයට මායිම්ව පිහිටි මෙහි කොටින් (Leopards) දැක ගැනීමට ලෝකයේ ඇති හොඳම ස්ථානයක් ලෙස සැලකේ. කොටින්ට අමතරව අලි ඇතුන්, කිඹුලන් සහ විවිධ කුරුලු විශේෂ රාශියක් මෙහිදී දැකගත හැකිය. මෙය සොබාදහමට ආදරය කරන අයට කිසිදා අමතක නොවන අත්දැකීමක් වනු ඇත.",
+      "category": "වනජීවී",
+      "location": "තිස්සමහාරාමය"
+    },
     "image": "https://images.unsplash.com/photo-1549405178-68e7f1e78457?q=80&w=1935&auto=format&fit=crop",
-    "category": "Wildlife",
     "tags": ["Safari", "Animals", "Adventure", "Nature"],
-    "location_cluster": "Deep South",
-    "location": "Tissamaharama",
-    "coordinates": { "lat": 6.3711, "lng": 81.5161 }
+    "location_cluster": "Deep South"
   },
   {
     "id": "kandy",
-    "title": "Spiritual Kandy: The Sacred Tooth Relic",
-    "excerpt": "Visit the cultural capital of Sri Lanka and the sacred Temple of the Tooth Relic.",
-    "content": "Kandy is a major city in Sri Lanka located in the Central Province. It was the last capital of the ancient kings' era of Sri Lanka. The city lies in the midst of hills in the Kandy plateau, which crosses an area of tropical plantations, mainly tea. Kandy is both an administrative and religious city and is also the capital of the Central Province. Kandy is the home of the Temple of the Tooth Relic (Sri Dalada Maligawa), one of the most sacred places of worship in the Buddhist world. It was declared a world heritage site by UNESCO in 1988.",
+    "en": {
+      "title": "Spiritual Kandy: The Sacred Tooth Relic",
+      "excerpt": "Visit the cultural capital of Sri Lanka and the sacred Temple of the Tooth Relic.",
+      "content": "Kandy was the last capital of the ancient kings' era of Sri Lanka. The city lies in the midst of hills and is home to the Temple of the Tooth Relic (Sri Dalada Maligawa), one of the most sacred places of worship in the Buddhist world. Kandy is a UNESCO World Heritage Site and is famous for its rich culture, traditional dancing, and the Esala Perahera festival.",
+      "category": "Culture",
+      "location": "Kandy"
+    },
+    "si": {
+      "title": "අසිරිමත් මහනුවර: දළදා හිමි සෙවණේ",
+      "excerpt": "ශ්‍රී ලංකාවේ සංස්කෘතික අගනුවර සහ ශ්‍රී දළදා මාලිගාවේ ඇති පූජනීයත්වය අත්විඳින්න.",
+      "content": "මහනුවර යනු ලංකාවේ අවසාන රාජධානියයි. කදුකරයෙන් වටවූ මෙම සුන්දර නගරයේ ලොව පුරා බෞද්ධ ජනතාවගේ පූජනීය ස්ථානයක් වන ශ්‍රී දළදා මාලිගාව පිහිටා ඇත. යුනෙස්කෝ ලෝක උරුමයක් වන මහනුවර නගරය ඇසළ පෙරහැර, උඩරට නැටුම් සහ ආගමික වටිනාකම නිසා මුළු ලොවම දන්නා ස්ථානයකි.",
+      "category": "සංස්කෘතිය",
+      "location": "මහනුවර"
+    },
     "image": "https://images.unsplash.com/photo-1620619767323-b95a89183081?q=80&w=2070&auto=format&fit=crop",
-    "category": "Culture",
     "tags": ["Sacred", "Buddhism", "UNESCO", "Temples"],
-    "location_cluster": "Central Highland",
-    "location": "Kandy",
-    "coordinates": { "lat": 7.2906, "lng": 80.6337 }
+    "location_cluster": "Central Highland"
   },
   {
     "id": "mirissa",
-    "title": "Whale Watching and Sunset Vibes in Mirissa",
-    "excerpt": "Relax on the golden sands of Mirissa and witness the majestic blue whales in the deep blue.",
-    "content": "Mirissa is a small town on the south coast of Sri Lanka, located in the Matara District of the Southern Province. It is approximately 150 kilometres south of Colombo and is situated at an elevation of 4 metres above sea level. Mirissa's beach and nightlife make it a popular tourist destination. It is also a fishing port and one of the island's main whale and dolphin watching locations.",
+    "en": {
+      "title": "Whale Watching and Sunset Vibes in Mirissa",
+      "excerpt": "Relax on the golden sands of Mirissa and witness the majestic blue whales in the deep blue.",
+      "content": "Mirissa is a popular town on the south coast of Sri Lanka. It is world-famous for its whale and dolphin watching tours, especially the majestic blue whales. Mirissa's beach is perfect for surfing, relaxation, and witnessing beautiful sunsets. The nightlife here is vibrant, making it a favorite spot for young travelers.",
+      "category": "Beach",
+      "location": "Matara District"
+    },
+    "si": {
+      "title": "මිරිස්ස: තල්මසුන් සහ හිරු බැස යන වෙරළ",
+      "excerpt": "මිරිස්සේ රන්වන් වැලි වෙරළේ විවේකය ගත කරමින් ගැඹුරු මුහුදේ වෙසෙන යෝධ නිල් තල්මසුන් නරඹන්න.",
+      "content": "මිරිස්ස කියන්නේ ලංකාවේ දකුණු වෙරළ තීරයේ තියෙන ලස්සනම නගරයක්. මෙය විශේෂයෙන්ම නිල් තල්මසුන් සහ ඩොල්ෆින් නිරීක්ෂණයට ලෝකයේ තියෙන හොඳම තැනක්. වෙරළේ විවේක ගන්න, සර්ෆින් කරන්න සහ හිරු බැස යන සුන්දර දසුන නරඹන්න මිරිස්ස කියාපු තැන. මිරිස්සේ රාත්‍රී කාලයත් ඉතාමත් විනෝදජනකයි.",
+      "category": "වෙරළ",
+      "location": "මාතර දිස්ත්‍රික්කය"
+    },
     "image": "https://images.unsplash.com/photo-1544218520-43510e15645e?q=80&w=1934&auto=format&fit=crop",
-    "category": "Beach",
     "tags": ["Surfing", "Whales", "Nightlife", "Sunset"],
-    "location_cluster": "South Coast",
-    "location": "Matara District",
-    "coordinates": { "lat": 5.9483, "lng": 80.4573 }
+    "location_cluster": "South Coast"
   }
 ]

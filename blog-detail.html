@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel with SASA | Destination Details</title>
+
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1b4332',
+              'primary-dark': '#081c15',
+              secondary: '#d4a373',
+            },
+            container: {
+              center: true,
+              padding: '2rem',
+            },
+          },
+        },
+      }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-black text-gray-100 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+      <div class="container py-4 flex items-center justify-between">
+        <div
+          class="flex items-center gap-2 cursor-pointer"
+          onclick="window.location.href = 'index.html'"
+        >
+          <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+            <i data-lucide="palmtree" class="text-secondary w-6 h-6"></i>
+          </div>
+          <span class="text-xl font-black tracking-tighter uppercase"
+            >Travel with <span class="text-secondary">SASA</span></span
+          >
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-semibold hover:text-secondary transition-colors"
+            >Home</a
+          >
+          <a href="#" class="text-sm font-semibold hover:text-secondary transition-colors"
+            >Plan My Trip</a
+          >
+          <button
+            class="px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-bold transition-all border border-white/10"
+          >
+            Contact
+          </button>
+        </div>
+
+        <button class="md:hidden" onclick="window.history.back()">
+          <i data-lucide="arrow-left"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Post Content -->
+    <div id="post-content">
+      <!-- Injected by app.js -->
+      <div class="h-screen flex items-center justify-center">
+        <div class="animate-pulse text-gray-500 font-black text-2xl uppercase tracking-widest">
+          Loading Adventure...
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-black">
+      <div class="container text-center">
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <i data-lucide="palmtree" class="text-secondary w-5 h-5"></i>
+          </div>
+          <span class="text-lg font-black uppercase">Travel with SASA</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-md mx-auto mb-8">
+          Authentic journeys handcrafted for the curious soul. Discover Sri Lanka like never before.
+        </p>
+        <div class="flex justify-center gap-6 mb-12">
+          <a href="#" class="text-gray-500 hover:text-white transition-colors"
+            ><i data-lucide="instagram"></i
+          ></a>
+          <a href="#" class="text-gray-500 hover:text-white transition-colors"
+            ><i data-lucide="facebook"></i
+          ></a>
+          <a href="#" class="text-gray-500 hover:text-white transition-colors"
+            ><i data-lucide="twitter"></i
+          ></a>
+        </div>
+        <div class="text-gray-700 text-xs pt-8 border-t border-white/5">
+          &copy; 2026 Travel with SASA. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

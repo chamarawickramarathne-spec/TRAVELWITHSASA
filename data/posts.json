@@ -16,6 +16,12 @@
       "location": "මාතලේ දිස්ත්‍රික්කය"
     },
     "image": "https://images.unsplash.com/photo-1588596389718-47291a10052c?q=80&w=2070&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1588596389718-47291a10052c?q=80&w=2070",
+      "https://images.unsplash.com/photo-1620173669641-698d2495d468?q=80&w=2070",
+      "https://images.unsplash.com/photo-1590603784139-290072714407?q=80&w=2070",
+      "https://images.unsplash.com/photo-1625232975924-a76059d4d872?q=80&w=2070"
+    ],
     "tags": ["Ancient", "UNESCO", "Hiking", "Culture"],
     "location_cluster": "Cultural Triangle"
   },
@@ -36,6 +42,12 @@
       "location": "බදුල්ල දිස්ත්‍රික්කය"
     },
     "image": "https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=2070&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=2070",
+      "https://images.unsplash.com/photo-1590603784139-290072714407?q=80&w=2070",
+      "https://images.unsplash.com/photo-1620173669641-698d2495d468?q=80&w=2070",
+      "https://images.unsplash.com/photo-1517781974276-85750868f0cb?q=80&w=2070"
+    ],
     "tags": ["Backpacking", "Mountains", "Nine Arch", "Adventure"],
     "location_cluster": "Hill Country"
   },

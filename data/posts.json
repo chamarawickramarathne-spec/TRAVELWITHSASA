@@ -54,21 +54,27 @@
   {
     "id": "galle",
     "en": {
-      "title": "Galle Fort: Where History Meets the Ocean",
-      "excerpt": "Walk through the cobblestone streets of the Dutch Fort and experience a unique blend of architecture.",
-      "content": "Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 432 years maintains a polished appearance. Today has a multi-ethnic and multi-religious population. It is a UNESCO World Heritage Site recognized for its unique European architecture and South Asian traditions.",
-      "category": "History",
+      "title": "Galle Fort: Sunsets and Silhouettes",
+      "excerpt": "Walking through the cobblestone streets of the Dutch Fort and witnessing the most beautiful sunset over the Indian Ocean.",
+      "content": "Galle Fort is a place where time stands still. Walking through its cobblestone streets, you feel the weight of over 400 years of history. But for me, the highlight was the evening at the ramparts.\n\nAs the sun began to dip below the horizon, the sky turned into a canvas of gold and purple. I sat there with friends, watching the silhouettes of people against the vast Indian Ocean. It’s a moment of pure peace that you can only find here.\n\nThe fort is a UNESCO World Heritage Site, originally built by the Portuguese and later fortified by the Dutch. Today, it's a vibrant blend of history and modern life, filled with boutique shops, cozy cafes, and the iconic white lighthouse standing guard.\n\n**Traveler Tip:** Head to the Flag Rock Bastion around 5:30 PM for the best sunset views. Don't forget to explore the narrow alleys like Leyn Baan Street for some hidden gems!",
+      "category": "Travel Log",
       "location": "Galle"
     },
     "si": {
-      "title": "ගාල්ල කොටුව: ඉතිහාසය සහ මුහුද මුණගැසෙන තැන",
-      "excerpt": "ලන්දේසි කොටුවේ ගල් අතුරා ඇති වීදි දිගේ ඇවිද යමින් ඉපැරණි ශ්‍රී ලංකාවේ අසිරිය විඳින්න.",
-      "content": "ගාල්ල කොටුව 1588 දී පෘතුගීසීන් විසින් මුලින්ම ඉදිකරන ලද අතර පසුව 17 වන සියවසේදී ලන්දේසීන් විසින් එය තවදුරටත් ශක්තිමත් කරන ලදී. වසර 400 කට වඩා පැරණි වුවද වර්තමානයේද ඉතා හොඳින් ආරක්ෂා වී පවතින මෙම කොටුව යුනෙස්කෝ ලෝක උරුමයක් ලෙස නම් කර ඇත. යුරෝපීය නිර්මාණ ශිල්පය සහ දකුණු ආසියානු සම්ප්‍රදායන්ගේ අපූරු එකතුවක් මෙහිදී දැකගත හැකිය.",
-      "category": "ඉතිහාසය",
+      "title": "ගාල්ල කොටුව: සැන්දෑ අසිරිය සහ මතකයන්",
+      "excerpt": "ලන්දේසි කොටුවේ ගල් අතුරා ඇති වීදි දිගේ ඇවිද යමින් ඉන්දියන් සාගරයේ සුන්දරම හිරු බැසයාම අත්විඳින්න.",
+      "content": "ගාල්ල කොටුව කියන්නේ කාලය නතර වෙච්ච තැනක් වගේ. එහි ඇති පටු වීදි දිගේ ඇවිද යනකොට අවුරුදු 400 කට වඩා පැරණි ඉතිහාසයක සුවඳ දැනෙනවා. හැබැයි මගේ හිත ගත්තේ කොටු පවුර උඩ ගත කරපු ඒ සුන්දර සවස් කාලයයි.\n\nහිරු බැස යන මොහොතේ අහස රන්වන් සහ දම් පැහැයෙන් හැඩවෙනකොට, මුහුද දෙස බලාගෙන ඉන්න මිනිසුන්ගේ කළු පැහැති සෙවනැලි (Silhouettes) පෙනෙන්නේ හරිම කලාත්මක විදිහට. ඒක වචනයෙන් විස්තර කරන්න බැරි තරම් නිස්කලංක මොහොතක්.\n\nයුනෙස්කෝ ලෝක උරුමයක් වන මෙම කොටුව මුලින්ම පෘතුගීසීන් විසින් ඉදිකර පසුව ලන්දේසීන් විසින් ශක්තිමත් කර තිබෙනවා. අද වන විට මෙහි පැරණි ගොඩනැගිලි අතර ලස්සන කැෆේ, කලාගාර සහ අයිකොනික් ප්‍රදීපාගාරය දැකගත හැකිය.\n\n**සංචාරක උපදෙස:** හිරු බැස යන ලස්සනම දසුන බලන්න හවස 5:30 ට විතර 'Flag Rock' එක පැත්තට යන්න අමතක කරන්න එපා.",
+      "category": "සංචාරක සටහන්",
       "location": "ගාල්ල"
     },
     "image": "https://images.unsplash.com/photo-1586500036706-41963de24d8b?q=80&w=1974&auto=format&fit=crop",
-    "tags": ["Colonial", "Beach", "UNESCO", "Architecture"],
+    "gallery": [
+      "https://images.unsplash.com/photo-1586500036706-41963de24d8b?q=80&w=1974",
+      "https://images.unsplash.com/photo-1546555132-9cb4d5162a84?q=80&w=2070",
+      "https://images.unsplash.com/photo-1620619767323-b95a89183081?q=80&w=2070",
+      "https://images.unsplash.com/photo-1517781974276-85750868f0cb?q=80&w=2070"
+    ],
+    "tags": ["Colonial", "Beach", "UNESCO", "Sunset", "Galle Fort"],
     "location_cluster": "South Coast"
   },
   {

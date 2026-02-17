@@ -1,17 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
 
 :root {
-  --primary: #1b4332; /* Rich Evergreen */
+  --primary: #1b4332; /* Deep Jungle Green */
   --primary-dark: #081c15;
-  --secondary: #d4a373; /* Sandy Gold */
+  --secondary: #bd8e62; /* Heritage Bronze/Earth */
   --accent: #2d6a4f;
+  --bg-light: #fdfaf6; /* Soft Cream/Parchment */
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --card-bg: #ffffff;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-  background-color: #050505;
-  color: #f8f9fa;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 h1,
@@ -19,15 +23,15 @@ h2,
 h3,
 h4,
 .font-heading {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism update to Light Mode */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Custom Scrollbar */
@@ -35,34 +39,38 @@ h4,
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--bg-light);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b4332;
+  background: var(--primary);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d6a4f;
+  background: var(--accent);
 }
 
+/* Color Overrides */
 .text-primary {
+  color: var(--primary);
+}
+.text-secondary {
   color: var(--secondary);
 }
 .bg-primary {
   background-color: var(--primary);
 }
-.bg-primary-dark {
-  background-color: var(--primary-dark);
+.bg-cream {
+  background-color: var(--bg-light);
 }
-.border-primary {
-  border-color: var(--primary);
+.border-soft {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -71,7 +79,7 @@ h4,
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .delay-100 {
@@ -82,6 +90,29 @@ h4,
 }
 .delay-300 {
   animation-delay: 300ms;
+}
+
+/* Heritage Cards */
+.heritage-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.heritage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(253, 250, 246, 0.1) 60%,
+    var(--bg-light) 100%
+  );
 }
 
 /* Line clamp plugin-like utilities */
@@ -104,14 +135,4 @@ h4,
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-/* Hero gradient */
-.hero-gradient {
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 5, 5, 0.2) 0%,
-    rgba(5, 5, 5, 0.8) 80%,
-    rgba(5, 5, 5, 1) 100%
-  );
 }

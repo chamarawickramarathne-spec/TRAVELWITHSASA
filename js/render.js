@@ -9,23 +9,27 @@ export const renderPostCard = (post) => {
   const data = post[lang] || post['en']
 
   return `
-        <div class="post-card group cursor-pointer overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20" onclick="window.location.href='blog-detail.html?id=${post.id}'">
-            <div class="relative h-64 overflow-hidden">
+        <div class="heritage-card group cursor-pointer" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+            <div class="relative h-72 overflow-hidden">
                 <img src="${post.image}" alt="${data.title}" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div class="absolute top-4 left-4">
-                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary/80 text-white backdrop-blur-sm uppercase tracking-wider">${data.category}</span>
+                    <span class="px-4 py-1.5 rounded-full text-[10px] font-bold bg-white/95 text-primary shadow-sm uppercase tracking-[0.2em] border border-primary/5">${data.category}</span>
                 </div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">${data.title}</h3>
-                <p class="text-gray-400 text-sm mb-4 line-clamp-3">${data.excerpt}</p>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-4 text-[10px] font-black text-secondary uppercase tracking-[0.15em]">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                    ${data.location}
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 line-clamp-2 leading-tight group-hover:text-primary transition-colors">${data.title}</h3>
+                <p class="text-gray-500 text-sm mb-6 line-clamp-3 leading-relaxed font-light">${data.excerpt}</p>
                 <div class="flex flex-wrap gap-2 mt-auto">
                     ${post.tags
                       .slice(0, 3)
                       .map(
                         (tag) =>
-                          `<span class="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-gray-400 border border-white/10">#${tag}</span>`,
+                          `<span class="text-[9px] px-3 py-1 rounded-full bg-primary/5 text-primary border border-primary/10 font-bold uppercase tracking-tighter">#${tag}</span>`,
                       )
                       .join('')}
                 </div>
@@ -39,13 +43,13 @@ export const renderSuggestionCard = (post) => {
   const data = post[lang] || post['en']
 
   return `
-        <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group" onclick="window.location.href='blog-detail.html?id=${post.id}'">
-            <div class="h-16 w-16 shrink-0 overflow-hidden rounded-lg">
+        <div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-primary/5 transition-all cursor-pointer group border border-transparent hover:border-primary/10" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+            <div class="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                 <img src="${post.image}" alt="${data.title}" class="h-full w-full object-cover transition-transform group-hover:scale-110">
             </div>
             <div>
-                <h4 class="text-sm font-semibold text-white line-clamp-1 group-hover:text-primary transition-colors">${data.title}</h4>
-                <p class="text-xs text-gray-500 mt-1">${data.location}</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-1 group-hover:text-primary transition-colors">${data.title}</h4>
+                <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-black">${data.location}</p>
             </div>
         </div>
     `
@@ -58,42 +62,42 @@ export const renderDetailedPost = (post) => {
 
   return `
         <div class="animate-in fade-in slide-in-from-bottom-5 duration-700">
-            <header class="relative h-[70vh] min-h-[500px] w-full">
+            <header class="relative h-[80vh] min-h-[600px] w-full">
                 <img src="${post.image}" alt="${data.title}" class="absolute inset-0 h-full w-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/95"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-bg-light"></div>
                 <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
                     <div class="max-w-4xl">
-                        <span class="inline-block px-4 py-1 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-widest mb-6 border border-white/10">${data.category}</span>
-                        <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 drop-shadow-2xl tracking-tighter">${data.title}</h1>
-                        <div class="flex items-center justify-center gap-6 text-white/80 text-sm md:text-lg font-medium">
-                            <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-secondary"></i> ${data.location}</span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-secondary/60"></span>
-                            <span class="flex items-center gap-2"><i data-lucide="calendar" class="w-5 h-5 text-secondary"></i> ${new Date().toLocaleDateString()}</span>
+                        <span class="inline-block px-5 py-2 rounded-full bg-white/95 text-primary text-xs font-black uppercase tracking-[.25em] mb-8 shadow-xl border border-primary/5">${data.category}</span>
+                        <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-8 drop-shadow-2xl tracking-tighter">${data.title}</h1>
+                        <div class="flex items-center justify-center gap-8 text-white text-sm md:text-lg font-bold uppercase tracking-widest">
+                            <span class="flex items-center gap-3"><i data-lucide="map-pin" class="w-6 h-6 text-secondary"></i> ${data.location}</span>
+                            <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                            <span class="flex items-center gap-3"><i data-lucide="calendar" class="w-6 h-6 text-secondary"></i> ${new Date().toLocaleDateString()}</span>
                         </div>
                     </div>
                 </div>
             </header>
 
-            <main class="container mx-auto px-6 -mt-32 relative z-10 pb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <article class="lg:col-span-2 space-y-12">
-                        <div class="bg-black/60 backdrop-blur-2xl border border-white/10 p-8 md:p-16 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+            <main class="container mx-auto px-6 -mt-32 relative z-10 pb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                    <article class="lg:col-span-2 space-y-16">
+                        <div class="bg-white border border-black/5 p-10 md:p-20 rounded-[3rem] shadow-2xl relative overflow-hidden">
                             <!-- Content -->
-                            <div class="prose prose-invert prose-xl max-w-none relative z-10">
+                            <div class="prose prose-lg max-w-none relative z-10">
                                 ${data.content
                                   .split('\n\n')
                                   .map((p, i) => {
-                                    // Inject a gallery image after the second paragraph if available
+                                    // Inject a gallery image after the second paragraph
                                     let imgHtml = ''
                                     if (i === 1 && images.length > 1) {
                                       imgHtml = `
-                                            <div class="my-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="my-16 grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 ${images
-                                                  .slice(1, 3)
+                                                  .slice(1, 4)
                                                   .map(
-                                                    (img) => `
-                                                    <div class="group overflow-hidden rounded-2xl aspect-[4/3] border border-white/10">
-                                                        <img src="${img}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                                    (img, idx) => `
+                                                    <div class="group overflow-hidden rounded-[2rem] border border-black/5 shadow-lg ${idx === 2 ? 'md:col-span-2 aspect-[21/9]' : 'aspect-square'}">
+                                                        <img src="${img}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                                                     </div>
                                                 `,
                                                   )
@@ -101,22 +105,22 @@ export const renderDetailedPost = (post) => {
                                             </div>
                                         `
                                     }
-                                    return `<p class="mb-8 text-gray-200 leading-relaxed font-light">${p}</p>${imgHtml}`
+                                    return `<p class="mb-10 text-gray-700 leading-relaxed font-light text-xl italic-p">${p}</p>${imgHtml}`
                                   })
                                   .join('')}
                             </div>
 
-                            <!-- Remaining Images -->
+                            <!-- Detailed Gallery Mosaic -->
                             ${
-                              images.length > 3
+                              images.length > 4
                                 ? `
-                                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
                                     ${images
-                                      .slice(3)
+                                      .slice(4)
                                       .map(
-                                        (img) => `
-                                        <div class="group overflow-hidden rounded-xl aspect-square border border-white/10">
-                                            <img src="${img}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                        (img, idx) => `
+                                        <div class="group overflow-hidden rounded-2xl aspect-square border border-black/5 shadow-md ${idx % 3 === 0 ? 'col-span-2 row-span-2' : ''}">
+                                            <img src="${img}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                                         </div>
                                     `,
                                       )
@@ -126,43 +130,51 @@ export const renderDetailedPost = (post) => {
                                 : ''
                             }
 
-                            <div class="mt-16 pt-12 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
+                            <div class="mt-20 pt-16 border-t border-black/5 flex flex-wrap items-center justify-between gap-8">
                                 <div>
-                                    <h3 class="text-xs font-black text-gray-500 uppercase tracking-widest mb-4">${lang === 'si' ? 'ටැග්' : 'TAGS'}</h3>
-                                    <div class="flex flex-wrap gap-2">
-                                        ${post.tags.map((tag) => `<span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">#${tag}</span>`).join('')}
+                                    <h3 class="text-xs font-black text-secondary uppercase tracking-[.3em] mb-6">${lang === 'si' ? 'ටැග්' : 'EXPLORE BY TAGS'}</h3>
+                                    <div class="flex flex-wrap gap-3">
+                                        ${post.tags.map((tag) => `<span class="px-5 py-2 rounded-xl bg-gray-50 border border-black/5 text-gray-600 text-xs font-bold hover:bg-primary/10 hover:text-primary transition-all cursor-default">#${tag}</span>`).join('')}
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors border border-white/10"><i data-lucide="share-2" class="w-4 h-4"></i></button>
-                                    <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors border border-white/10"><i data-lucide="heart" class="w-4 h-4"></i></button>
+                                    <button class="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center hover:bg-primary hover:text-white transition-all border border-black/5 text-gray-400 group"><i data-lucide="share-2" class="w-6 h-6 transition-transform group-hover:rotate-12"></i></button>
+                                    <button class="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-all border border-black/5 text-gray-400 group"><i data-lucide="heart" class="w-6 h-6 transition-transform group-hover:scale-125"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Integration Placeholder -->
+                        <div class="bg-white border border-black/5 p-10 md:p-16 rounded-[3rem] shadow-xl">
+                            <h3 class="text-2xl font-black text-gray-900 mb-8 uppercase tracking-tighter">${lang === 'si' ? 'ස්ථානය' : 'LOCATION & ROUTES'}</h3>
+                            <div class="aspect-video w-full bg-gray-100 rounded-[2rem] overflow-hidden relative border border-black/5">
+                                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074" class="w-full h-full object-cover opacity-50 grayscale">
+                                <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-6">
+                                    <i data-lucide="map" class="w-16 h-16 text-primary mb-4"></i>
+                                    <p class="text-gray-900 font-bold mb-4 uppercase tracking-widest">${lang === 'si' ? 'ගූගල් සිතියම මෙතැනින්' : 'Explore on Google Maps'}</p>
+                                    <button class="px-8 py-3 bg-primary text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform uppercase text-xs tracking-widest">${lang === 'si' ? 'සිතියම විවෘත කරන්න' : 'View Full Itinerary'}</button>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <aside class="space-y-8">
-                        <div class="bg-white/5 backdrop-blur-lg border border-white/10 p-10 rounded-[2.5rem]">
-                            <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3">
-                                <i data-lucide="compass" class="text-secondary w-6 h-6"></i>
-                                ${lang === 'si' ? 'ආසන්න ස්ථාන' : 'Explore Nearby'}
+                    <aside class="space-y-12">
+                        <div class="bg-white border border-black/5 p-12 rounded-[3rem] shadow-xl sticky top-28">
+                            <h3 class="text-xl font-black text-gray-900 mb-10 flex items-center gap-4 uppercase tracking-tighter">
+                                <i data-lucide="compass" class="text-secondary w-7 h-7"></i>
+                                ${lang === 'si' ? 'තවත් විස්මිත තැන්' : 'NEARBY GEMS'}
                             </h3>
-                            <div id="nearby-suggestions" class="space-y-6">
-                                <p class="text-gray-500 text-sm animate-pulse">${lang === 'si' ? 'සොයමින් පවතී...' : 'Finding hidden gems nearby...'}</p>
+                            <div id="nearby-suggestions" class="space-y-8">
+                                <p class="text-gray-400 text-sm animate-pulse">${lang === 'si' ? 'සොයමින් පවතී...' : 'Discovering more magic...'}</p>
                             </div>
-                        </div>
 
-                        <div class="bg-primary/20 border border-primary/30 p-10 rounded-[2.5rem] relative overflow-hidden group">
-                           <div class="relative z-10">
-                                <h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter">${lang === 'si' ? 'චාරිකාව සැලසුම් කරන්න' : 'Plan Your Journey'}</h3>
-                                <p class="text-gray-300 text-sm mb-8 leading-relaxed">${lang === 'si' ? 'සැබෑ ලංකාව අත්විඳින්න අප උදව් කරන්නම්. අදම අප හා එක්වන්න.' : `Want to visit ${data.location}? Let us help you plan an authentic adventure that goes beyond the guidebook.`}</p>
-                                <button class="w-full py-4 px-8 bg-secondary hover:bg-secondary/90 text-primary-dark font-black rounded-2xl transition-all shadow-xl shadow-secondary/10 uppercase tracking-tighter">
-                                    ${lang === 'si' ? 'සැලසුම් කරන්න' : 'Get Custom Itinerary'}
-                                </button>
-                           </div>
-                           <div class="absolute -right-20 -bottom-20 opacity-10 group-hover:scale-110 transition-transform duration-1000">
-                               <i data-lucide="map" class="w-64 h-64"></i>
-                           </div>
+                            <div class="mt-16 pt-12 border-t border-black/5">
+                                <div class="bg-primary/5 p-8 rounded-[2rem] border border-primary/10 group cursor-pointer hover:bg-primary transition-all duration-500">
+                                    <h4 class="font-black text-primary group-hover:text-white transition-colors mb-2 uppercase tracking-tighter">${lang === 'si' ? 'සැලසුම් කරන්න' : 'PLAN YOUR TRIP'}</h4>
+                                    <p class="text-xs text-gray-500 group-hover:text-white/80 transition-colors leading-relaxed">${lang === 'si' ? 'සැබෑ ලංකාව අත්විඳින්න අප උදව් කරන්නම්.' : 'Let our locals design your perfect adventure.'}</p>
+                                    <i data-lucide="arrow-right" class="mt-6 text-secondary group-hover:translate-x-4 transition-transform"></i>
+                                </div>
+                            </div>
                         </div>
                     </aside>
                 </div>

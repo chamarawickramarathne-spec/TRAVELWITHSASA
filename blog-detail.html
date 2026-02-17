@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel with SASA | Destination Details</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Explore authentic Sri Lankan destinations in detail." />
 
     <!-- CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +17,8 @@
             colors: {
               primary: '#1b4332',
               'primary-dark': '#081c15',
-              secondary: '#d4a373',
+              secondary: '#bd8e62',
+              'bg-light': '#fdfaf6',
             },
             container: {
               center: true,
@@ -30,88 +34,82 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="bg-black text-gray-100 overflow-x-hidden">
+  <body class="bg-bg-light text-[#1a1a1a] overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
-      <div class="container py-4 flex items-center justify-between">
+    <nav class="fixed top-0 w-full z-50 glass border-b border-black/5">
+      <div class="container py-5 flex items-center justify-between">
         <div
-          class="flex items-center gap-2 cursor-pointer"
+          class="flex items-center gap-3 cursor-pointer group"
           onclick="window.location.href = 'index.html'"
         >
-          <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-transform group-hover:rotate-12"
+          >
             <i data-lucide="palmtree" class="text-secondary w-6 h-6"></i>
           </div>
-          <span class="text-xl font-black tracking-tighter uppercase"
-            >Travel with <span class="text-secondary">SASA</span></span
+          <span class="text-xl font-black tracking-tighter uppercase text-gray-900"
+            >Travel with <span class="text-secondary italic">SASA</span></span
           >
         </div>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-semibold hover:text-secondary transition-colors"
+          <a
+            href="index.html"
+            class="text-[10px] font-black uppercase tracking-[0.2em] hover:text-secondary transition-colors"
             >Home</a
-          >
-          <a href="#" class="text-sm font-semibold hover:text-secondary transition-colors"
-            >Plan My Trip</a
           >
           <button
             id="lang-toggle"
-            class="px-4 py-1 border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 transition-colors"
+            class="px-4 py-1.5 border border-black/10 rounded-xl text-[10px] font-black hover:bg-black/5 transition-colors tracking-widest uppercase"
           >
             SI
           </button>
           <button
-            class="px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-bold transition-all border border-white/10"
+            class="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-2xl text-[10px] font-black transition-all border border-black/5 shadow-xl shadow-primary/20 uppercase tracking-widest"
           >
-            Contact
+            Plan Trip
           </button>
         </div>
 
-        <button class="md:hidden" onclick="window.history.back()">
-          <i data-lucide="arrow-left"></i>
+        <button class="md:hidden text-gray-900">
+          <i data-lucide="menu"></i>
         </button>
       </div>
     </nav>
 
-    <!-- Post Content -->
+    <!-- Content Area -->
     <div id="post-content">
       <!-- Injected by app.js -->
       <div class="h-screen flex items-center justify-center">
-        <div class="animate-pulse text-gray-500 font-black text-2xl uppercase tracking-widest">
-          Loading Adventure...
+        <div class="animate-pulse text-gray-400 font-black uppercase tracking-widest">
+          Consulting the Oracle...
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/5 bg-black">
+    <footer class="py-24 bg-white border-t border-black/5">
       <div class="container text-center">
-        <div class="flex items-center justify-center gap-2 mb-8">
-          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <i data-lucide="palmtree" class="text-secondary w-5 h-5"></i>
-          </div>
-          <span class="text-lg font-black uppercase">Travel with SASA</span>
-        </div>
-        <p class="text-gray-600 text-sm max-w-md mx-auto mb-8">
-          Authentic journeys handcrafted for the curious soul. Discover Sri Lanka like never before.
+        <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] mb-6">
+          &copy; 2026 Travel with SASA
         </p>
-        <div class="flex justify-center gap-6 mb-12">
-          <a href="#" class="text-gray-500 hover:text-white transition-colors"
+        <div class="flex justify-center gap-6">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"
             ><i data-lucide="instagram"></i
           ></a>
-          <a href="#" class="text-gray-500 hover:text-white transition-colors"
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"
             ><i data-lucide="facebook"></i
           ></a>
-          <a href="#" class="text-gray-500 hover:text-white transition-colors"
-            ><i data-lucide="twitter"></i
-          ></a>
-        </div>
-        <div class="text-gray-700 text-xs pt-8 border-t border-white/5">
-          &copy; 2026 Travel with SASA. All rights reserved.
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
     <script type="module" src="js/app.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        if (window.lucide) lucide.createIcons()
+      })
+    </script>
   </body>
 </html>
